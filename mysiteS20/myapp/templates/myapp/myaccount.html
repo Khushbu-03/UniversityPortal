@@ -1,0 +1,64 @@
+
+{% extends 'myapp/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block body_block %}
+    <div class="row justify-content-center">
+      <div class="col col-md-6">
+                <div class="card">
+                    <fieldset class="form-group">
+                        <legend class="border-bottom mb-4">Profile Info</legend>
+                    </fieldset>
+                    <div class="content-section">
+                        <div class="media">
+{#                             <img class="rounded-circle account-img"   width="240"><br /><br />#}
+                            <div class="media-body">
+                                <h2 class="account-heading">{{ user.first_name|capfirst }} {{ user.last_name|capfirst }}</h2>
+                                <p class="text-secondary">{{ user.email }}
+                                    <li class="hbar1"><a href = "{% url 'myapp:profile_image' %}">Upload Profile Pic</a></li>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col col-md-6">
+                <div class="card h-50">
+                    <br/>
+                    <h2>Previous Courses Ordered</h2>
+                    <br/>
+                    {% if order_list %}
+                        {% for orders in order_list %}
+                            <p>✔ {{orders}} </p>
+                        {% endfor %}
+                    {% else %}
+                        <p>No orders to show!!!!</p>
+                    {% endif %}
+                </div>
+                <hr/>
+                <div class="row justify-content-center">
+                    <div class="col col-md-20">
+                        <div class="card h-100">
+                            <br/>
+                            <h2>Interested Topics</h2>
+                            <br/>
+                            {% if interest_list %}
+                                {% for course in interest_list %}
+                                    <p>✔ {{course}} </p>
+                                    <br/>
+                                {% endfor %}
+                            {% else %}
+                                <p>Sorry🤔 No interests to show!!!!</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
+

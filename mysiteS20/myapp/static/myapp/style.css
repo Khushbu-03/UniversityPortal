@@ -1,0 +1,171 @@
+header {
+  background: #55d6aa;
+}
+
+/* clearfix to clear it's child elements- clears floats */
+/* :after selector inserts something after the content of selected element */
+header:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+/* styling the logo in the header */
+div.container .logo {
+  margin: 0;
+  padding: 0;
+  float: left;
+  padding: 10px;
+  width: 170px; /* Width of logo */
+}
+
+div.text {
+  margin-left: 500px;
+  margin-right: 250px;
+  padding: 30px;
+  background-color: white;
+  color: black;
+  opacity: 0.9;
+  font-family: serif;
+  text-align: justify;
+}
+
+a img {
+  width:100px;
+  height:120px;
+  margin:10px;
+  float:right;
+}
+
+div.nav {
+  float: right;
+}
+
+div.nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+div.nav li {
+  display: inline-block;
+  margin-left: 70px;
+  padding-top: 20px;
+  text-transform: uppercase;
+}
+
+.nav-tabs {
+  color: #3c403d;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.nav-tabs:hover {
+  color: black;
+}
+
+.container{
+  width: 80%;
+  margin: 0;
+  padding-left: 80px;
+}
+
+.content {
+  font-family: sans-serif;
+  color: white;
+  text-align: center;
+}
+
+section{
+  display: inline-block;
+  width: 100%;
+  height: 100vh; /* equal to 100% of the viewport height */
+}
+
+section h1{
+  /* padding-top: 20px; */
+  justify-content: center;
+  align-items: center;
+  font-size: 6em;
+  color: #fafafa;
+  opacity: 0.8;
+}
+section h2{
+  /* padding-top: 20px; */
+  justify-content: center;
+  align-items: center;
+  font-size: 4.5em;
+  color: #fafafa;
+  opacity: 0.7;
+}
+section h3{
+  /* padding-top: 20px; */
+  justify-content: center;
+  align-items: center;
+  font-size: 3.4em;
+  color: #fafafa;
+  opacity: 0.6;
+}
+
+.content .section:nth-child(1){
+  background-image: url("../images/backimg.jpg");
+  height: 700px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size:cover; /* Resize the background image to cover the entire container */
+  /* opacity: 0.8; */
+}
+
+.content .section:nth-child(2){
+  background-color: black;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  height: 600px;
+  box-sizing: border-box;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+p.para{
+  justify-content: center;
+  align-items: center;
+  font-size: 4.5em;
+  color: #fafafa;
+  opacity: 0.85;
+}
+
+p.para a{
+  color: white;
+  text-decoration: none;
+}
+
+.hbar1 {
+display: inline;
+margin: 15px;
+}
+
+body {
+    background-color: white;
+}
+h1{
+    font-weight: bold;
+    font-size: 15px;
+    color: black;
+    text-align: left;
+}
+h2{
+    font-weight: bold;
+    font-size: 15px;
+    color: black;
+    text-align: left;
+}

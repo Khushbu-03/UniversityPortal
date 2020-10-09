@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% load static  %}
+{% load crispy_forms_tags %}
+<html>
+<head>
+<meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Courses</title>
+    <link rel = "stylesheet" type= "text/css" href="{% static "myapp/style.css" %}" />
+    <link rel = "stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" type="css">
+
+</head>
+<body>
+
+<div>
+<h1>{% block myhdg %}Hello
+    {%  if request.user.is_authenticated %}
+      {{ user.first_name}} {{user.last_name }}<br>
+
+    {% else %}
+      User
+    {% endif %}
+{% endblock %}
+</h1>
+{% block body_block %}*** {% endblock %}
+</div>
+<hr />
+<div>
+    <center>
+<ul>
+
+    <li class="hbar1"><a href = "{% url 'myapp:about' %}">About Us</a></li>
+    <li class="hbar1"><a href = "{% url 'myapp:index' %}">Main Page</a></li>
+    <li class="hbar1"><a href = "{% url 'myapp:courses' %}">Check the trending courses</a></li>
+    <li class="hbar1"><a href = "{% url 'myapp:myaccount' %}">My Account</a></li>
+
+{%  if request.user.is_authenticated %}
+<li class="hbar1"><a href = "{% url 'myapp:user_logout' %}">Logout</a></li>
+    {% else %}
+        <a href = "{% url 'password_reset' %}">Forgot Password?</a>
+    <li class="hbar1"><a href = "{% url 'myapp:register' %}">Register Here</a></li>
+    <li class="hbar1"><a href = "{% url 'myapp:user_login' %}">Login</a></li>
+    {% endif %}
+
+
+</ul>
+    </center>
+</div>
+</body>
+</html>
+
+
+{#<link rel="stylesheet" type="text/css" href="{% static 'myapp/style.css' %}" />#}
+{#<title>E-Learning WebApp - {% block title %}Welcome!{% endblock %}</title>#}

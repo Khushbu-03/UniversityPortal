@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" type="css">
+</head>
+
+<body style="margin: 20px; padding: 10px;">{% extends 'myapp/base.html' %}
+
+{% block body_block %}
+    {% if courlist %}
+    <center><h2>List of Courses</h2></center>
+    <ol>
+    {% for c in courlist %}
+        <li> <a href="/myapp/courses/{{c.id}}">{{ c.name}}</a> </li>
+    {% endfor %}
+    </ol>
+    {% else %}
+    <strong>There are no available courses for this topic!</strong>
+    {% endif %}
+    <br>
+    <a href="{%  url 'myapp:placeorder' %}">Place new order</a>
+{% endblock %}
+</body>
+</html>

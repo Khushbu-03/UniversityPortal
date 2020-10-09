@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+{% load static  %}
+
+
+<html>
+
+<head>
+
+<link rel="stylesheet" type="text/css" href="{% static 'myapp/style.css' %}" />
+
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" type="css">
+
+<title>E-Learning WebApp - {% block title %}Welcome!{% endblock %}</title>
+
+</head>
+
+<body>
+
+<div>
+
+<h1 style="text-align: center;">{% block myhdg %}Hello User {% endblock %}</h1>
+
+    {% block body_block %}
+
+    <h2 style="text-align: center;">You have been logged out</h2>
+
+<ul>
+
+    <li class="hbar1"><a href="{% url 'myapp:about' %}">Find out about our E-Learning site</a></li>
+
+    <li class="hbar1"><a href = "{% url 'myapp:index' %}">Click here to return to main page</a></li>
+
+    <li class="hbar1"><a href = "{% url 'myapp:courses' %}">Click here to go to course page</a></li>
+
+    <li class="hbar1"><a href = "{% url 'myapp:user_login' %}">Login Again</a></li>
+
+</ul>
+
+{% endblock %}
+
+</div>
+
+</body>
+
+</html>

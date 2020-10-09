@@ -1,0 +1,12 @@
+{% extends 'myapp/base.html' %}
+{% block body_block %}
+    <div class = "text">
+        <p><h3> This is an E-learning Website! Check our latest courses and learn with ease.  <br>
+            Register on the site by clicking on Register Here. <br>
+        Already Registered? Click the Log In link below!
+        </h3>
+    </div>
+    <p>{{ Topics.objects.filter}}</p>
+{#    <p><a href="/myapp/index">Home page</a></p>#}
+{#    <p><a href="{% url 'myapp:index' %}">home page</a></p>#}
+{% endblock %}

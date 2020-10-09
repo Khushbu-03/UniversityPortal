@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Page</title>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" type="css">
+</head>
+
+<body>
+{% extends 'myapp/base.html' %}
+{% block body_block %}
+    <p>Last Login: {{ lst_login }} </p>
+    {% if top_list %}
+     <div style="margin: 20px; padding: 10px;">
+
+    <div class = "text"><h2>Our Trending Topics</h2><br>
+    <ol>
+        {% for top in top_list %}
+        <li> <p> <a href="{% url 'myapp:detail' top.id %}">{{ top.name }}</a></p> </li>
+        {% endfor %}
+    </ol>
+    </div>
+     </div>
+{% else %}
+    <strong>There are no available topics!</strong>
+{% endif %}
+</div>
+
+{% if course_list %}
+    <div class="text"><h2>Our Trending Courses</h2><br>
+        {% for course in course_list %}
+                {% if course.for_everyone is True %}
+                </br>{{ course }} <b> - This course is for everyone </b></br>
+            {% else %}
+                </br>{{ course }} <b> - This course is not for everyone. </b></br>
+            {% endif %}
+        {% endfor %}
+{% else %}
+    <strong>There are no available courses!</strong>
+{% endif %}
+    </div>
+    </div>
+
+
+{#<p><a href="/myapp/about">About page</a></p>#}
+{#<p><a href="{% url 'myapp:about' %}">About page </a></p>#}
+{% endblock %}
+</body>
+
+</html>
+
+
+

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" type="css">
+
+</head>
+
+<body style="margin: 20px; padding: 10px;">{% extends 'myapp/base.html' %}
+
+{% block body_block %}
+
+    <br> <b>Topic name: </b> {{ tp.name }} <br>
+
+    <br> <b>category: </b> {{ tp.category }} <br>
+
+    <br> <b> Course Names: </b> <br>
+
+    {% for c in courses %}
+
+        <br> {{ c }} <br>
+
+    {% endfor %}
+
+{#    <p><a href="{% url 'myapp:index' %}">Index page </a></p>#}
+
+{% endblock %}
+
+</body>
+
+</html>

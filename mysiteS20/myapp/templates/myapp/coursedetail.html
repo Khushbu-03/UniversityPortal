@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" type="css">
+</head>
+
+<body style="margin: 20px; padding: 10px;">
+
+    {% extends 'myapp/base.html' %}
+
+    {% block body_block %}
+<div class="text">
+        <p><b>Topic</b>: {{ course.topic.name}}</p>
+
+        <p><b>Course</b>: {{ course.name}}</p>
+
+        <p><b>Price</b>: {{ course.price}}</p>
+
+        <p><b>Category</b>: {{ course.topic.category}}</p><hr>
+
+        {% if course.for_everyone %}
+
+            <p>Course is for everyone</p>
+
+        {% else %}
+
+            <p>Course is not for everyone</p>
+
+        {% endif %}
+
+        <p>Number of people interested: {{ course.interested }}</p>
+
+        <form method="post" novalidate>
+
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <button class="btn btn-sm btn-primary" type="submit">Submit</button>
+
+        </form>
+
+    {% endblock %}
+</div>
+</body>
+
+</html>
